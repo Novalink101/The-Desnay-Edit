@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Desnay Edit | Premium Personalised Newspapers</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- PITCH BLACK PREMIUM GLASS SYSTEM --- */
+        :root {
+            --bg-pitch-black: #000000;
+            --bg-gradient: radial-gradient(circle at 50% 0%, #1a1510 0%, #000000 60%);
+            
+            /* Glass Variables */
+            --glass-bg: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(212, 175, 55, 0.25);
+            
+            --gold-primary: #D4AF37;
+            --gold-dark: #997A21;
+            
+            --text-main: #FFFFFF;
+            --text-muted: #8A8A8A;
+            
+            --font-script: 'Great Vibes', cursive;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+        }
+
+        /* --- RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-pitch-black);
+            background-image: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION (Floating Black Glass Pill) --- */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            padding: 12px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(212, 175, 55, 0.05);
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .nav-icon {
+            background: transparent;
+            border: 1px solid var(--gold-primary);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--gold-primary);
+            font-family: var(--font-serif);
+            font-size: 16px;
+            font-weight: 700;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-text h1 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gold-primary);
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+
+        .nav-text p {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* --- MAIN HERO SECTION --- */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 140px 20px 60px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- PITCH BLACK GLASS LOGO CONTAINER --- */
+        .logo-container {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), inset 0 0 30px rgba(212, 175, 55, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding: 25px;
+        }
+
+        .logo-container::after {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border-radius: 50%;
+            border: 1px dashed rgba(212, 175, 55, 0.3);
+            pointer-events: none;
+        }
+
+        .logo-title {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--gold-primary);
+            letter-spacing: 1.5px;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .logo-script {
+            font-family: var(--font-script);
+            font-size: 1.8rem;
+            color: var(--text-main);
+            line-height: 0.9;
+            margin-bottom: 2px;
+            text-shadow: 0 2px 10px rgba(255,255,255,0.1);
+        }
+
+        .logo-tagline {
+            font-size: 0.35rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold-dark);
+            margin-top: 8px;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        .hero-subtitle {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold-primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hero-subtitle::before, .hero-subtitle::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1px;
+            background-color: var(--gold-primary);
+            opacity: 0.6;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: 3.2rem;
+            color: var(--gold-primary);
+            line-height: 1.1;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero-script-title {
+            font-family: var(--font-script);
+            font-size: 3rem;
+            color: var(--text-main);
+            margin-bottom: 40px;
+            line-height: 1;
+            text-shadow: 0 2px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-events {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 15px 30px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-main);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        /* --- MAIN CONTENT & SERVICES SECTIONS --- */
+        .section-padding {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Glass Cards Layout */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
+        }
+
+        /* Pricing Table */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pricing-table th, .pricing-table td {
+            padding: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .pricing-table th {
+            color: var(--gold-primary);
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .pricing-table td {
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+        
+        .pricing-table .price-col {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--gold-primary);
+            font-weight: 700;
+        }
+
+        .pricing-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 15px;
+        }
+
+        /* How to Order Steps */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--gold-primary);
+            border: 1px solid var(--gold-primary);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .step-text h4 {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .step-text p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Policies & FAQ Lists */
+        .policy-block, .faq-block {
+            margin-bottom: 25px;
+        }
+
+        .policy-block h4, .faq-block h4 {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold-primary);
+            margin-bottom: 8px;
+        }
+
+        .policy-block p, .faq-block p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Contact Table */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .contact-item .label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold-primary);
+            margin-bottom: 8px;
+        }
+
+        .contact-item .value {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        /* Buttons */
+        .contact-cta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--gold-primary);
+            color: var(--bg-pitch-black);
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.8rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gold-primary);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--gold-primary);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gold-primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold-primary);
+            color: var(--bg-pitch-black);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.8);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--gold-primary);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .footer-thanks {
+            font-family: var(--font-script);
+            font-size: 2rem;
+            color: var(--text-main);
+            margin: 20px 0;
+        }
+
+        .footer-small {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-top: 20px;
+        }
+
+        /* --- FLOATING WHATSAPP BUTTON --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366; 
+            color: var(--bg-pitch-black);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            header {
+                width: 92%;
+                padding: 10px 20px;
+            }
+            
+            .logo-container { 
+                width: 220px; 
+                height: 220px; 
+            }
+            .logo-title { font-size: 1rem; }
+            .logo-script { font-size: 1.6rem; }
+            .logo-tagline { font-size: 0.3rem; }
+            
+            .hero-title { font-size: 2.2rem; letter-spacing: 1px; }
+            .hero-script-title { font-size: 2.2rem; margin-bottom: 30px; }
+            
+            .hero-events {
+                font-size: 0.6rem;
+                padding: 12px 20px;
+                width: 100%;
+                max-width: 350px;
+                line-height: 1.8;
+            }
+
+            .glass-card {
+                padding: 25px;
+            }
+
+            .pricing-table th, .pricing-table td { padding: 10px; font-size: 0.8rem; }
+            .pricing-table .price-col { font-size: 1.2rem; }
+            
+            .contact-cta { flex-direction: column; width: 100%; max-width: 300px; margin: 30px auto 0; }
+            .btn { width: 100%; padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FLOATING NAVIGATION BAR -->
+    <header>
+        <a href="#" class="nav-brand">
+            <div class="nav-icon">D</div>
+            <div class="nav-text">
+                <h1>The Desnay Edit</h1>
+                <p>Personalised Newspapers</p>
+            </div>
+        </a>
+    </header>
+
+    <!-- MAIN HERO SECTION -->
+    <section class="hero">
+        
+        <!-- Premium Pitch Black Glass Circular Logo -->
+        <div class="logo-container">
+            <div class="logo-title">The Desnay</div>
+            <div class="logo-title" style="font-size: 1.3rem; margin-top: -2px; margin-bottom: 5px;">Edit</div>
+            <div class="logo-subtitle">Personalised Newspapers</div>
+            
+            <div class="logo-script">Your story.</div>
+            <div class="logo-script">Your memories.</div>
+            
+            <div class="logo-tagline">Every Moment Deserves A Front Page</div>
+        </div>
+
+        <!-- Text Content -->
+        <p class="hero-subtitle">Welcome To</p>
+        
+        <h2 class="hero-title">The Desnay<br>Edit</h2>
+        <h3 class="hero-script-title">Turning moments into headlines.</h3>
+        
+        <div class="hero-events">
+            Birthdays • Matric Dances • Graduations • Anniversaries
+        </div>
+
+        <div class="contact-cta">
+            <a href="https://wa.me/27722717467" class="btn">WhatsApp to Order</a>
+            <a href="https://instagram.com/thedesnayedit" class="btn btn-outline">Instagram</a>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="section-padding">
+        <div class="section-heading">
+            <h2>Our Printed Price List</h2>
+            <p>Choose the size that suits your special moment.</p>
+        </div>
+        
+        <div class="glass-card" style="max-width: 700px; margin: 0 auto;">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Dimensions</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--gold-primary);">A4</td>
+                        <td>21 x 29.7 cm</td>
+                        <td class="price-col">R120</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--gold-primary);">A3</td>
+                        <td>29.7 x 42 cm</td>
+                        <td class="price-col">R180</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="pricing-note">BLACK & WHITE is the standard finish. Colour printing is available at an additional cost.</p>
+            <p class="pricing-note" style="margin-top: 5px;">Each newspaper is personalised with your chosen photos, details and occasion.</p>
+        </div>
+    </section>
+
+    <!-- HOW TO ORDER SECTION -->
+    <section class="section-padding" style="background: rgba(212, 175, 55, 0.02);">
+        <div class="section-heading">
+            <h2>How To Order</h2>
+            <p>Your own personalised newspaper in a few simple steps.</p>
+        </div>
+        
+        <div class="glass-card">
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <div class="step-text">
+                        <h4>Choose Your Size</h4>
+                        <p>Select A4 or A3, and let me know whether you would like black & white or colour.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <div class="step-text">
+                        <h4>Send Your Details</h4>
+                        <p>DM on Instagram or WhatsApp with your photos, occasion, names, dates, wording and any special requests.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <div class="step-text">
+                        <h4>Pay Your Deposit</h4>
+                        <p>A 50% deposit is required to secure your order and allow me to begin designing.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">04</div>
+                    <div class="step-text">
+                        <h4>Approve & Settle The Balance</h4>
+                        <p>Once the design is ready, the remaining 50% must be paid before collection. Please check your details carefully before approving the design for printing.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">05</div>
+                    <div class="step-text">
+                        <h4>Collect Your Order</h4>
+                        <p>When the full balance has been paid and your newspaper is ready, we will confirm the collection arrangements.</p>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-family: var(--font-script); font-size: 1.5rem; color: var(--gold-primary);">Standard turnaround time: 2-3 days.</p>
+        </div>
+    </section>
+
+    <!-- POLICIES & FAQ SECTION -->
+    <section class="section-padding">
+        <div class="section-heading">
+            <h2>Policies & Info</h2>
+            <p>Please read through these before placing your order.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- Policies -->
+            <div class="glass-card">
+                <h3 style="color: var(--gold-primary); font-family: var(--font-serif); margin-bottom: 20px; font-size: 1.3rem;">Our Policies</h3>
+                
+                <div class="policy-block">
+                    <h4>Orders & Confirmation</h4>
+                    <p>A 50% deposit is required to confirm your booking and allow design work to begin. Please provide all wording, names, dates and other details accurately.</p>
+                </div>
+                <div class="policy-block">
+                    <h4>Payment</h4>
+                    <p>The remaining 50% balance is payable once your design is complete and before collection of the printed newspaper. Your order can only be released once payment has been received in full.</p>
+                </div>
+                <div class="policy-block">
+                    <h4>Printing & Colour</h4>
+                    <p>Printed newspapers are available in A4 and A3. Black and white is the standard finish; colour printing is available at an additional cost.</p>
+                </div>
+                <div class="policy-block">
+                    <h4>Design Approval & Changes</h4>
+                    <p>Please review your design carefully and check all names, dates, spelling and wording. Any requested changes must be made before the design is sent for printing. Changes after printing has started may not be possible.</p>
+                </div>
+                <div class="policy-block">
+                    <h4>Cancellations & Refunds</h4>
+                    <p>The 50% deposit covers the booking and design work. Once design work has started, the deposit is non-refundable. If you need to cancel or discuss a concern, please contact me as soon as possible.</p>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="glass-card">
+                <h3 style="color: var(--gold-primary); font-family: var(--font-serif); margin-bottom: 20px; font-size: 1.3rem;">Frequently Asked Questions</h3>
+                
+                <div class="faq-block">
+                    <h4>Q: What occasions do you design for?</h4>
+                    <p>A: Birthdays, matric dances, graduations, anniversaries, surprises and many other special occasions.</p>
+                </div>
+                <div class="faq-block">
+                    <h4>Q: What sizes are available?</h4>
+                    <p>A: Printed newspapers are available in A4 and A3.</p>
+                </div>
+                <div class="faq-block">
+                    <h4>Q: How long does an order take?</h4>
+                    <p>A: Please allow 2-3 days for completion once all required details have been received.</p>
+                </div>
+                <div class="faq-block">
+                    <h4>Q: Do you offer delivery?</h4>
+                    <p>A: Delivery is not currently available. Collection arrangements will be confirmed when your order is ready.</p>
+                </div>
+                <div class="faq-block">
+                    <h4>Q: When can I request changes?</h4>
+                    <p>A: Please request changes and check all details before the design goes to print.</p>
+                </div>
+                <div class="faq-block">
+                    <h4>Q: How does payment work?</h4>
+                    <p>A: A 50% deposit is required before design work begins. The remaining 50% is due before collection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section-padding" style="background: rgba(212, 175, 55, 0.02);">
+        <div class="section-heading">
+            <h2>Let's Get In Touch</h2>
+            <p>Have a special occasion coming up? I'd love to help turn your memories into a personalised newspaper.</p>
+        </div>
+
+        <div class="glass-card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="label">Instagram</span>
+                    <span class="value">@thedesnayedit</span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">WhatsApp</span>
+                    <span class="value">072 271 7467</span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">Based In</span>
+                    <span class="value">South Africa</span>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">DM to place an order or ask a question.</p>
+            <p style="font-family: var(--font-script); font-size: 1.8rem; color: var(--gold-primary);">Your moment deserves a front page.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-title">THE DESNAY EDIT</div>
+        <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted);">Personalised Newspapers</p>
+        
+        <div class="footer-thanks">
+            <p>Thank you for supporting my small business.</p>
+        </div>
+
+        <p style="font-size: 0.8rem; color: var(--text-muted); max-width: 500px; margin: 0 auto;">
+            Thank you for choosing The Desnay Edit to be part of your special moments. Every order, share, recommendation and kind message means so much.
+        </p>
+
+        <div class="footer-small">
+            EVERY MOMENT DESERVES A FRONT PAGE.
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/27722717467" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+    </a>
+
+</body>
+</html>
