@@ -290,6 +290,39 @@
             margin-bottom: 40px;
         }
 
+        /* --- NEW GALLERY CSS --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            padding: 10px; /* Creates a frame effect */
+            margin-bottom: 0; /* Removes default glass-card margin */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1 / 1; /* Keeps images perfectly square */
+            overflow: hidden;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+            border-color: var(--gold-primary);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures images fill the square beautifully */
+            border-radius: 12px;
+            display: block;
+        }
+
         /* Pricing Table */
         .pricing-table {
             width: 100%;
@@ -559,6 +592,12 @@
             
             .contact-cta { flex-direction: column; width: 100%; max-width: 300px; margin: 30px auto 0; }
             .btn { width: 100%; padding: 15px 20px; }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+                gap: 10px;
+            }
+            .gallery-item { padding: 6px; }
         }
     </style>
 </head>
@@ -640,8 +679,55 @@
         </div>
     </section>
 
-    <!-- HOW TO ORDER SECTION -->
+    <!-- NEW GALLERY SECTION -->
     <section class="section-padding" style="background: rgba(212, 175, 55, 0.02);">
+        <div class="section-heading">
+            <h2>Our Recent Editions</h2>
+            <p>A glimpse into the moments we've turned into headlines.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Image 1 -->
+            <div class="glass-card gallery-item">
+                <img src="Image1.png" alt="Personalised Newspaper 1">
+            </div>
+            <!-- Image 2 -->
+            <div class="glass-card gallery-item">
+                <img src="Image2.png" alt="Personalised Newspaper 2">
+            </div>
+            <!-- Image 3 -->
+            <div class="glass-card gallery-item">
+                <img src="Image3.png" alt="Personalised Newspaper 3">
+            </div>
+            <!-- Image 4 -->
+            <div class="glass-card gallery-item">
+                <img src="Image4.png" alt="Personalised Newspaper 4">
+            </div>
+            <!-- Image 5 -->
+            <div class="glass-card gallery-item">
+                <img src="Image5.png" alt="Personalised Newspaper 5">
+            </div>
+            <!-- Image 6 -->
+            <div class="glass-card gallery-item">
+                <img src="Image6.png" alt="Personalised Newspaper 6">
+            </div>
+            <!-- Image 7 -->
+            <div class="glass-card gallery-item">
+                <img src="Image7.png" alt="Personalised Newspaper 7">
+            </div>
+            <!-- Image 8 -->
+            <div class="glass-card gallery-item">
+                <img src="Image8.png" alt="Personalised Newspaper 8">
+            </div>
+            <!-- Image 9 -->
+            <div class="glass-card gallery-item">
+                <img src="Image9.png" alt="Personalised Newspaper 9">
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO ORDER SECTION -->
+    <section class="section-padding">
         <div class="section-heading">
             <h2>How To Order</h2>
             <p>Your own personalised newspaper in a few simple steps.</p>
@@ -690,7 +776,7 @@
     </section>
 
     <!-- POLICIES & FAQ SECTION -->
-    <section class="section-padding">
+    <section class="section-padding" style="background: rgba(212, 175, 55, 0.02);">
         <div class="section-heading">
             <h2>Policies & Info</h2>
             <p>Please read through these before placing your order.</p>
@@ -698,7 +784,7 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
             <!-- Policies -->
-            <div class="glass-card">
+            <div class="glass-card" style="margin-bottom: 0;">
                 <h3 style="color: var(--gold-primary); font-family: var(--font-serif); margin-bottom: 20px; font-size: 1.3rem;">Our Policies</h3>
                 
                 <div class="policy-block">
@@ -717,14 +803,14 @@
                     <h4>Design Approval & Changes</h4>
                     <p>Please review your design carefully and check all names, dates, spelling and wording. Any requested changes must be made before the design is sent for printing. Changes after printing has started may not be possible.</p>
                 </div>
-                <div class="policy-block">
+                <div class="policy-block" style="margin-bottom: 0;">
                     <h4>Cancellations & Refunds</h4>
                     <p>The 50% deposit covers the booking and design work. Once design work has started, the deposit is non-refundable. If you need to cancel or discuss a concern, please contact me as soon as possible.</p>
                 </div>
             </div>
 
             <!-- FAQ -->
-            <div class="glass-card">
+            <div class="glass-card" style="margin-bottom: 0;">
                 <h3 style="color: var(--gold-primary); font-family: var(--font-serif); margin-bottom: 20px; font-size: 1.3rem;">Frequently Asked Questions</h3>
                 
                 <div class="faq-block">
@@ -747,7 +833,7 @@
                     <h4>Q: When can I request changes?</h4>
                     <p>A: Please request changes and check all details before the design goes to print.</p>
                 </div>
-                <div class="faq-block">
+                <div class="faq-block" style="margin-bottom: 0;">
                     <h4>Q: How does payment work?</h4>
                     <p>A: A 50% deposit is required before design work begins. The remaining 50% is due before collection.</p>
                 </div>
@@ -756,7 +842,7 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section class="section-padding" style="background: rgba(212, 175, 55, 0.02);">
+    <section class="section-padding">
         <div class="section-heading">
             <h2>Let's Get In Touch</h2>
             <p>Have a special occasion coming up? I'd love to help turn your memories into a personalised newspaper.</p>
